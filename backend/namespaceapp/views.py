@@ -42,11 +42,11 @@ def create_namespace(request):
             cpu = data.get('cpu_quota')
             memory = data.get('memory_quota')
 
-            # 🔥 ADD THESE PRINTS HERE 
+            
             print("Creating namespace:", namespace) 
             print("Kubernetes call starting")
 
-            # 🔥 Kubernetes MUST work now
+            
             config.load_kube_config()
             v1 = client.CoreV1Api()
 
@@ -74,7 +74,7 @@ def create_namespace(request):
             v1.create_namespaced_resource_quota(namespace, quota) 
             print("Resource quota applied:", cpu, memory)
 
-            # ✅ Save to DB only if K8s success
+            # save to db if kuber success
             NamespaceRecord.objects.create(
                 namespace=namespace,
                 owner=owner,
