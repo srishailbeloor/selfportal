@@ -45,13 +45,13 @@ function App() {
 
   const handleDelete = async (ns) => {
 
-  // ✅ Confirmation popup
+  //  Confirmation 
   const confirmDelete = window.confirm(
     `Are you sure you want to delete namespace "${ns}"?`
   );
 
   if (!confirmDelete) {
-    return; // ❌ Stop if user clicks Cancel
+    return; 
   }
 
   try {
