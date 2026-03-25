@@ -24,6 +24,22 @@ A full-stack web application that allows users to create, manage, and delete Kub
 - Containerization: Docker
 
 ---
+🏗️ Architecture of the Solution
+
+"Architecture" (architecture.png)
+
+The system follows a full-stack architecture:
+
+- The user interacts with the React frontend
+- The frontend communicates with the Django backend via REST APIs
+- The backend uses the Kubernetes Python client to interact with the Minikube cluster
+- Kubernetes handles namespace creation, deletion, and resource quotas
+- MySQL database stores metadata such as namespace details and status
+
+Flow:
+User → React → Django → Kubernetes → MySQL
+
+---
 
 ⚙️ Prerequisites
 
